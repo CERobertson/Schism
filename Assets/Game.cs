@@ -34,17 +34,21 @@ public class Game : MonoBehaviour {
             Debug.LogWarning($"Only one instance of {typeof(Game)} expected.");
     }
     void Update() {
-        if (previousInputState != InputState) {
-            foreach (var toToggle in (previousInputState ^ InputState).Decompose()) {
+        previousInputState = updateInputActions(previousInputState, InputState);
+    }
+    ActionMap updateInputActions(ActionMap previous, ActionMap current) {
+        if (previous != current) {
+            foreach (var toToggle in (previous ^ current).Decompose()) {
                 if (InputControl.Instance.TryGetActionMapType(toToggle, out Type actionMapType)) {
                     if (Toggle(actionMapType) == null)
                         Debug.LogWarning($"'{actionMapType.Name}' not found in the Game Input Action Map Dictionary.");
                 }
                 else
                     Debug.LogWarning($"'{toToggle}' not found in the Input Control Id to Action Map Dictionary.");
-                previousInputState ^= toToggle;
+                previous ^= toToggle;
             }
         }
+        return previous;
     }
 
     InputActions _inputActions;
@@ -88,10 +92,12 @@ public class Game : MonoBehaviour {
         var result = new T?();
         if (InputControl.Instance.TryGetId<T>(out ActionMap actionMap)) {
             if (TryResolveActionMap(ref result)) {
-                if (InputState.AllowAddition(actionMap))
-                    InputState |= actionMap;
-                else
-                    result = null;
+                lock (_InputState_) {
+                    if (InputState.AllowAddition(actionMap))
+                        InputState |= actionMap;
+                    else
+                        result = null;
+                }
             }
             else
                 Debug.LogWarning($"'{typeof(T).Name}' not found in the Game Input Action Map Dictionary.");
@@ -101,6 +107,7 @@ public class Game : MonoBehaviour {
 
         return result;
     }
+    object _InputState_ = new object();
     bool ActionMapGetEnabled(Type t, object o) => ((bool)_inputActionEnabledDictionary[t].GetValue(o));
     bool ActionMapSetEnabled(Type t, object o, bool value) {
         if (value)
