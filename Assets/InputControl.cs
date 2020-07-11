@@ -21,7 +21,7 @@ public class InputControl : MonoBehaviour {
     IDictionary<ActionMap, Type> _idActionMapDictionary;
     public bool TryRegister(Type t) {
         if (_actionMapIndex >= _actionMapIndex_max) {
-            Debug.LogWarning($"Exceeded _actionMapIndex_max: '{_actionMapIndex_max}'. Registration skipped.");
+            Debug.LogWarning($"Exceeded _actionMapIndex_max: '{_actionMapIndex_max}'. Registration for '{t.Name}' skipped.");
             return false;
         }
         else if (!_actionMapIdDictionary.ContainsKey(t)) {

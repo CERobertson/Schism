@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// !IMPORTANT!
+// The ascending value order of the ActionMap Enum must match
+// The alphabetical order the InputActions.*Actions.
+// !IMPORTANT!
 [Flags]
 public enum ActionMap {
     _none = 0,
@@ -14,8 +18,7 @@ public enum ActionMap {
 
 public static class ActionMapExtensions {
     public static bool AllowAddition(this ActionMap source, ActionMap possibility) {
-
-        return false;
+        return source == 0;
     }
     public static bool Contains(this ActionMap source, ActionMap value) => (source & value) != 0;
     public static IEnumerable<ActionMap> Decompose(this ActionMap source) {

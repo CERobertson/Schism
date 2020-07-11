@@ -18,10 +18,10 @@
                 {
                     "name": "",
                     "id": "07b59cde-4f03-4657-8b1b-72aedae28156",
-                    "path": "",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad And Keyboard",
                     "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false

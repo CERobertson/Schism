@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
+using static InputActions;
 
-public class ExclusionaryDisjunction : MonoBehaviour
+public class ExclusionaryDisjunction : MonoBehaviour, IMenuOneDimensionalActions
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public string[] Options = new string[2];
+
+    MenuOneDimensionalActions? _actions;
+
+    public void OnNewaction(InputAction.CallbackContext context) {
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Awake() {
+        _actions = Game.Instance.RequestActionMap<MenuOneDimensionalActions>();
+        if (_actions.HasValue)
+            _actions.Value.SetCallbacks(this);
     }
+
 }

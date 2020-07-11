@@ -9,7 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
     public static Game Instance { get; private set; }
+
+//Controls which InputActions Action Maps are active.
+//Unity editor handles Flags well so it is useful
+//to keep public while developing.
+#if UNITY_EDITOR
     public ActionMap InputState;
+#else
+    ActionMap InputState;
+#endif
+
     ActionMap previousInputState;
     void Awake() {
         if (Instance == null) {
@@ -43,6 +52,7 @@ public class Game : MonoBehaviour {
     IDictionary<Type, PropertyInfo> _inputActionEnabledDictionary;
     IDictionary<Type, MethodInfo> _inputActionEnableDictionary;
     IDictionary<Type, MethodInfo> _inputActionDisableDictionary;
+
     void GenerateInputActionDictionary() {
         foreach (var property in typeof(InputActions).GetProperties().Where(x => x.PropertyType.Name.Contains("Action") && x.Name != "asset")) {
             PropertyInfo propertyInfo;
@@ -57,10 +67,9 @@ public class Game : MonoBehaviour {
             }
         }
     }
-    bool TryResolveActionMap<T>(out T value) where T : class {
-        value = null;
+    bool TryResolveActionMap<T>(ref T? value) where T : struct {
         if (_inputActionDictionary.TryGetValue(typeof(T), out PropertyInfo propertyInfo)) {
-            value = propertyInfo.GetValue(_inputActions) as T;
+            value = (T)propertyInfo.GetValue(_inputActions);
             return true;
         }
         return false;
@@ -75,10 +84,10 @@ public class Game : MonoBehaviour {
     /// </summary>
     /// <typeparam name="T">The type of action map requested</typeparam>
     /// <returns>The action map object requested, null when inaccessiable or not found.</returns>
-    public T RequestActionMap<T>() where T : class {
-        T result = null;
+    public T? RequestActionMap<T>() where T : struct {
+        var result = new T?();
         if (InputControl.Instance.TryGetId<T>(out ActionMap actionMap)) {
-            if (TryResolveActionMap(out result)) {
+            if (TryResolveActionMap(ref result)) {
                 if (InputState.AllowAddition(actionMap))
                     InputState |= actionMap;
                 else
@@ -100,7 +109,7 @@ public class Game : MonoBehaviour {
             _inputActionDisableDictionary[t].Invoke(o, null);
         return value;
     }
-    bool? Toggle(Type t){
+    bool? Toggle(Type t) {
         if (_inputActionDictionary.TryGetValue(t, out PropertyInfo propertyInfo)) {
             var actionMap = propertyInfo.GetValue(_inputActions);
             return ActionMapGetEnabled(t, actionMap) ? ActionMapSetEnabled(t, actionMap, false) : ActionMapSetEnabled(t, actionMap, true);
