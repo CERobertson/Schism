@@ -10,14 +10,15 @@ public abstract class ExclusionaryDisjunction : MonoBehaviour, IOneDimensionActi
     Image[] OptionBackgrounds;
 
     void Awake() {
-        index = 0;
-        
         OptionBackgrounds = new Image[Options.Length];
         for (int i=0; i<Options.Length; i++) {
             OptionBackgrounds[i] = gameObject.GetComponentsInChildren<Image>().Single(x => x.gameObject.name == Options[i]);
         }
-        OptionBackgrounds[index].enabled = true;
+    }
 
+    void OnEnable() {
+        index = 0;
+        OptionBackgrounds[index].enabled = true;
         var _actions = Game.Instance.RequestActionMap<OneDimensionActions>();
         if (_actions.HasValue) {
             _actions.Value.SetCallbacks(this);
@@ -58,8 +59,11 @@ public abstract class ExclusionaryDisjunction : MonoBehaviour, IOneDimensionActi
         }
     }
     Action DisableInputActions;
+
+    public abstract void Cancel();
     public void OnCancel(InputAction.CallbackContext context) {
         DisableInputActions();
+        Cancel();
         gameObject.SetActive(false);
     }
 }

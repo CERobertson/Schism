@@ -15,6 +15,297 @@ public class @InputActions : IInputActionCollection, IDisposable
     ""name"": ""InputActions"",
     ""maps"": [
         {
+            ""name"": ""Any"",
+            ""id"": ""06e29754-e027-448e-9432-9896cbcbb118"",
+            ""actions"": [
+                {
+                    ""name"": ""Press"",
+                    ""type"": ""Button"",
+                    ""id"": ""1743f864-c34e-4ccb-8502-4b2d37a6603f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bd40cf26-013f-48d5-b807-f4b45372bfaa"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cba67b16-4c0b-40a4-a96c-c45068a96f3a"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02e193f7-24cb-47a0-9e8c-d138e06e66de"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24ab28dc-472f-484a-b870-d5c59b8d2c7f"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f979383a-919a-4e6a-a6c7-d335efb23588"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73abb341-5271-4d88-bae3-43b552dcdd17"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab872778-395b-4227-81ba-6ed2f6648263"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c85c4942-cf70-459b-873a-9b9789a20d61"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02c1b307-2159-48e5-a391-01e8871cc6e0"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""afacfcf8-c45f-44c4-a723-e12453cf7c3e"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2acddd09-8940-430d-8b4e-b0366dc96585"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9549dda8-d067-4309-a594-5c9de355844e"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f45a05b2-fda5-4c30-9f82-7033123792dd"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d5bb3ce-00e6-4367-beef-7fb4ce7536e8"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62ff91b3-987a-46ed-9e97-688155629457"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2594055e-3044-4c79-9aa3-e7e83e381906"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c340f6a9-19e7-4f37-adf9-e67f1b67891d"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c74048bd-29ce-4124-a55b-0bb8460cb640"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69ce755e-2400-45c6-9f91-4fae70b3cffb"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07fd7b77-80dd-4458-b33e-1876dd11be74"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51b4d569-64b1-43c9-8330-f008c15885fa"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58d81ebc-825a-4477-9821-ad69a2ef4bc5"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9380eed7-ff50-4a57-a5dd-f2b684329daf"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8882d096-48e6-4cfb-8909-d46211611da4"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ec9eabd-ce82-420f-a493-98e5044809bd"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""OneDimension"",
             ""id"": ""c652d1e9-a3e1-41c9-9f63-756169d9ebee"",
             ""actions"": [
@@ -208,6 +499,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d5677f3e-1862-46fe-a5b3-05b349473040"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Positive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""00cf6ac3-2ebb-4ed8-84e2-daed1150048f"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
@@ -353,6 +655,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""9f5835c2-ca20-4666-b3d0-580b11b0ba52"",
                     ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Negative"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ea1bb83-b5f4-4cab-add5-38611352fef6"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad With Keyboard"",
@@ -514,6 +827,9 @@ public class @InputActions : IInputActionCollection, IDisposable
         }
     ]
 }");
+        // Any
+        m_Any = asset.FindActionMap("Any", throwIfNotFound: true);
+        m_Any_Press = m_Any.FindAction("Press", throwIfNotFound: true);
         // OneDimension
         m_OneDimension = asset.FindActionMap("OneDimension", throwIfNotFound: true);
         m_OneDimension_Positive = m_OneDimension.FindAction("Positive", throwIfNotFound: true);
@@ -565,6 +881,39 @@ public class @InputActions : IInputActionCollection, IDisposable
     {
         asset.Disable();
     }
+
+    // Any
+    private readonly InputActionMap m_Any;
+    private IAnyActions m_AnyActionsCallbackInterface;
+    private readonly InputAction m_Any_Press;
+    public struct AnyActions
+    {
+        private @InputActions m_Wrapper;
+        public AnyActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Press => m_Wrapper.m_Any_Press;
+        public InputActionMap Get() { return m_Wrapper.m_Any; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AnyActions set) { return set.Get(); }
+        public void SetCallbacks(IAnyActions instance)
+        {
+            if (m_Wrapper.m_AnyActionsCallbackInterface != null)
+            {
+                @Press.started -= m_Wrapper.m_AnyActionsCallbackInterface.OnPress;
+                @Press.performed -= m_Wrapper.m_AnyActionsCallbackInterface.OnPress;
+                @Press.canceled -= m_Wrapper.m_AnyActionsCallbackInterface.OnPress;
+            }
+            m_Wrapper.m_AnyActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Press.started += instance.OnPress;
+                @Press.performed += instance.OnPress;
+                @Press.canceled += instance.OnPress;
+            }
+        }
+    }
+    public AnyActions @Any => new AnyActions(this);
 
     // OneDimension
     private readonly InputActionMap m_OneDimension;
@@ -630,6 +979,10 @@ public class @InputActions : IInputActionCollection, IDisposable
             if (m_GamepadWithKeyboardSchemeIndex == -1) m_GamepadWithKeyboardSchemeIndex = asset.FindControlSchemeIndex("Gamepad With Keyboard");
             return asset.controlSchemes[m_GamepadWithKeyboardSchemeIndex];
         }
+    }
+    public interface IAnyActions
+    {
+        void OnPress(InputAction.CallbackContext context);
     }
     public interface IOneDimensionActions
     {

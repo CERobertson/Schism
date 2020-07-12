@@ -8,12 +8,12 @@ using UnityEngine;
 // !IMPORTANT!
 [Flags]
 public enum ActionMap {
-    _none = 0,
-    OneDimension = 0x1,
-    Test1 = 0x2,
-    Test2 = 0x4,
-    Test3 = 0x8,
-    Test4 = 0x10
+    _none =        0,
+    Any =          0x1,
+    OneDimension = 0x2,
+    Test2 =        0x4,
+    Test3 =        0x8,
+    Test4 =        0x10
 }
 
 public static class ActionMapExtensions {
