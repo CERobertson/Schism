@@ -1,28 +1,65 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static InputActions;
 
-public class ExclusionaryDisjunction : MonoBehaviour, IMenuOneDimensionalActions
-{
+public abstract class ExclusionaryDisjunction : MonoBehaviour, IOneDimensionActions {
     public string[] Options = new string[2];
     Image[] OptionBackgrounds;
 
-
-    int index = 0;
     void Awake() {
+        index = 0;
+        
         OptionBackgrounds = new Image[Options.Length];
         for (int i=0; i<Options.Length; i++) {
             OptionBackgrounds[i] = gameObject.GetComponentsInChildren<Image>().Single(x => x.gameObject.name == Options[i]);
         }
-        var _actions = Game.Instance.RequestActionMap<MenuOneDimensionalActions>();
-        if (_actions.HasValue)
+        OptionBackgrounds[index].enabled = true;
+
+        var _actions = Game.Instance.RequestActionMap<OneDimensionActions>();
+        if (_actions.HasValue) {
             _actions.Value.SetCallbacks(this);
+            DisableInputActions = () => {
+                _actions.Value.SetCallbacks(null);
+                Game.Instance.DisableActionMap<OneDimensionActions>();
+            };
+        }
     }
 
-    public void OnNewaction(InputAction.CallbackContext context) {
-        throw new System.NotImplementedException();
+    int index;
+    object _index_ = new object();
+    public void OnPositive(InputAction.CallbackContext context) {
+        lock (_index_) {
+            if (context.phase == InputActionPhase.Started) {
+                OptionBackgrounds[index].enabled = false;
+                index = (index + 1) % Options.Length;
+                OptionBackgrounds[index].enabled = true;
+            }
+        }
     }
 
+    public void OnNegative(InputAction.CallbackContext context) {
+        lock (_index_) {
+            if (context.phase == InputActionPhase.Started) {
+                OptionBackgrounds[index].enabled = false;
+                index = (index - 1) < 0 ? Options.Length - 1 : (index - 1) % Options.Length;
+                OptionBackgrounds[index].enabled = true;
+            }
+        }
+    }
+
+    public abstract void Confirm(int index);
+    public void OnConfirm(InputAction.CallbackContext context) {
+        lock (_index_) {
+            DisableInputActions();
+            Confirm(index);
+        }
+    }
+    Action DisableInputActions;
+    public void OnCancel(InputAction.CallbackContext context) {
+        DisableInputActions();
+        gameObject.SetActive(false);
+    }
 }

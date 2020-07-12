@@ -9,8 +9,10 @@ public class Scene : MonoBehaviour
 {
     public LoadingScreen LoadingScreen;
     public int SceneBuildIndex;
+    public GameObject POV;
     void Awake() {
         SceneBuildIndex = gameObject.scene.buildIndex;
         Game.Instance.CurrentScene = this;
+        POV?.SetActive(true);
     }
 }

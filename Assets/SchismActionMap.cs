@@ -9,7 +9,7 @@ using UnityEngine;
 [Flags]
 public enum ActionMap {
     _none = 0,
-    MenuOneDimension = 0x1,
+    OneDimension = 0x1,
     Test1 = 0x2,
     Test2 = 0x4,
     Test3 = 0x8,

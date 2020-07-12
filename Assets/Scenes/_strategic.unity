@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadingScreen: {fileID: 960117087}
   SceneBuildIndex: 0
+  POV: {fileID: 784325528}
 --- !u!4 &1183997841
 Transform:
   m_ObjectHideFlags: 0

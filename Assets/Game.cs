@@ -8,8 +8,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
-    public static Game Instance { get; private set; }
-
 //Controls which InputActions Action Maps are active.
 //Unity editor handles Flags well so it is useful
 //to keep public while developing.
@@ -20,6 +18,7 @@ public class Game : MonoBehaviour {
 #endif
 
     ActionMap previousInputState;
+    public static Game Instance { get; private set; }
     void Awake() {
         if (Instance == null) {
             _inputActions = new InputActions();
@@ -27,7 +26,11 @@ public class Game : MonoBehaviour {
             _inputActionEnabledDictionary = new Dictionary<Type, PropertyInfo>(); ;
             _inputActionEnableDictionary = new Dictionary<Type, MethodInfo>(); ;
             _inputActionDisableDictionary = new Dictionary<Type, MethodInfo>(); ;
+            _sceneDictionary = new Dictionary<string, int>();
+            _actionMapEnumDictionary = new Dictionary<Type, ActionMap>();
+            _enumActionMapDictionary = new Dictionary<ActionMap, Type>();
             GenerateInputActionDictionary();
+            GenerateSceneDictionary();
             Instance = this;
         }
         else
@@ -39,7 +42,7 @@ public class Game : MonoBehaviour {
     ActionMap updateInputActions(ActionMap previous, ActionMap current) {
         if (previous != current) {
             foreach (var toToggle in (previous ^ current).Decompose()) {
-                if (InputControl.Instance.TryGetActionMapType(toToggle, out Type actionMapType)) {
+                if (_enumActionMapDictionary.TryGetValue(toToggle, out Type actionMapType)) {
                     if (Toggle(actionMapType) == null)
                         Debug.LogWarning($"'{actionMapType.Name}' not found in the Game Input Action Map Dictionary.");
                 }
@@ -51,11 +54,14 @@ public class Game : MonoBehaviour {
         return previous;
     }
 
+    #region InputActions Control
     InputActions _inputActions;
     IDictionary<Type, PropertyInfo> _inputActionDictionary;
     IDictionary<Type, PropertyInfo> _inputActionEnabledDictionary;
     IDictionary<Type, MethodInfo> _inputActionEnableDictionary;
     IDictionary<Type, MethodInfo> _inputActionDisableDictionary;
+    IDictionary<Type, ActionMap> _actionMapEnumDictionary;
+    IDictionary<ActionMap, Type> _enumActionMapDictionary;
 
     void GenerateInputActionDictionary() {
         foreach (var property in typeof(InputActions).GetProperties().Where(x => x.PropertyType.Name.Contains("Action") && x.Name != "asset")) {
@@ -67,18 +73,12 @@ public class Game : MonoBehaviour {
                 _inputActionEnabledDictionary[property.PropertyType] = property.PropertyType.GetProperty("enabled");
                 _inputActionEnableDictionary[property.PropertyType] = property.PropertyType.GetMethod("Enable");
                 _inputActionDisableDictionary[property.PropertyType] = property.PropertyType.GetMethod("Disable");
-                InputControl.Instance.Register(property.PropertyType);
+                RegisterActionMap(property.PropertyType);
             }
         }
     }
-    bool TryResolveActionMap<T>(ref T? value) where T : struct {
-        if (_inputActionDictionary.TryGetValue(typeof(T), out PropertyInfo propertyInfo)) {
-            value = (T)propertyInfo.GetValue(_inputActions);
-            return true;
-        }
-        return false;
-    }
 
+    object _InputState_ = new object();
     /// <summary>
     /// Caller can expect null results if the
     /// request for a type of ActionMap is
@@ -90,7 +90,7 @@ public class Game : MonoBehaviour {
     /// <returns>The action map object requested, null when inaccessiable or not found.</returns>
     public T? RequestActionMap<T>() where T : struct {
         var result = new T?();
-        if (InputControl.Instance.TryGetId<T>(out ActionMap actionMap)) {
+        if (_actionMapEnumDictionary.TryGetValue(typeof(T), out ActionMap actionMap)) {
             if (TryResolveActionMap(ref result)) {
                 lock (_InputState_) {
                     if (InputState.AllowAddition(actionMap))
@@ -107,7 +107,37 @@ public class Game : MonoBehaviour {
 
         return result;
     }
-    object _InputState_ = new object();
+
+    public void DisableActionMap<T>() {
+        lock (_InputState_) {
+            InputState &= ~_actionMapEnumDictionary[typeof(T)];
+        }
+    }
+
+    int _actionMapIndex = 0;
+    int _actionMapIndex_max = 32;
+    bool TryRegisterActionMap(Type t) {
+        if (_actionMapIndex >= _actionMapIndex_max) {
+            Debug.LogWarning($"Exceeded _actionMapIndex_max: '{_actionMapIndex_max}'. Registration for '{t.Name}' skipped.");
+            return false;
+        }
+        else if (!_actionMapEnumDictionary.ContainsKey(t)) {
+            var actionMap = (ActionMap)(1 << _actionMapIndex);
+            _actionMapEnumDictionary[t] = actionMap;
+            _enumActionMapDictionary[actionMap] = t;
+            _actionMapIndex++;
+        }
+        return true;
+    }
+    void RegisterActionMap(Type t) => TryRegisterActionMap(t);
+
+    bool TryResolveActionMap<T>(ref T? value) where T : struct {
+        if (_inputActionDictionary.TryGetValue(typeof(T), out PropertyInfo propertyInfo)) {
+            value = (T)propertyInfo.GetValue(_inputActions);
+            return true;
+        }
+        return false;
+    }
     bool ActionMapGetEnabled(Type t, object o) => ((bool)_inputActionEnabledDictionary[t].GetValue(o));
     bool ActionMapSetEnabled(Type t, object o, bool value) {
         if (value)
@@ -123,7 +153,16 @@ public class Game : MonoBehaviour {
         }
         return null;
     }
+    #endregion
 
+    #region Scene Control
+    IDictionary<string, int> _sceneDictionary;
+    void GenerateSceneDictionary() {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings ; i++) {
+            var scene = SceneUtility.GetScenePathByBuildIndex(i).Split('/');
+            _sceneDictionary[scene[scene.Length -1].Split('.')[0]] = i;
+        }
+    }
     Scene _currentScene;
     Scene _previousScene;
     public Scene CurrentScene {
@@ -142,10 +181,10 @@ public class Game : MonoBehaviour {
             LoadComplete -= DestroyLoadingScreenOnLoadComplete;
         }
     }
-    public void Load(int scene) {
+    public void Load(string scene) {
         _previousScene = _currentScene;
         CurrentScene.LoadingScreen.Panel.SetActive(true);
-        AddScene(scene);
+        AddScene(_sceneDictionary[scene]);
         UnloadScene(_currentScene.SceneBuildIndex);
         StartCoroutine(GetSceneLoadProgress());
     }
@@ -167,4 +206,5 @@ public class Game : MonoBehaviour {
         LoadComplete?.Invoke(this, ScenesLoading);
     }
     public event EventHandler<IList<AsyncOperation>> LoadComplete;
+    #endregion
 }
