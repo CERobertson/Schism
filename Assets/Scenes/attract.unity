@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &215883777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f3960018c62494ebdb0810c65514bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuQuickstart: {fileID: 2071429576}
+  MenuQuickstart: {fileID: 215883776}
 --- !u!4 &371000435
 Transform:
   m_ObjectHideFlags: 0
@@ -1252,7 +1252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2071429577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1291,9 +1291,10 @@ MonoBehaviour:
   - YES
   - NO
   Scenes:
-  - {fileID: 102900000, guid: fa94f962e6056c54880097e7ef0b68f5, type: 3}
+  - {fileID: 102900000, guid: b1b940ff79cb3e146982864f94ca2e1e, type: 3}
   - {fileID: 102900000, guid: 409962862f437374ca2128122997e81f, type: 3}
   ControlAttract: {fileID: 371000433}
+  Canvas: {fileID: 215883776}
 --- !u!114 &2071429579
 MonoBehaviour:
   m_ObjectHideFlags: 0

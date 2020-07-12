@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_strategic.unity
     guid: fa94f962e6056c54880097e7ef0b68f5
+  - enabled: 1
+    path: Assets/Scenes/_vehicle.unity
+    guid: b1b940ff79cb3e146982864f94ca2e1e
   m_configObjects: {}

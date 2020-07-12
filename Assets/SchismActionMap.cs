@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 // !IMPORTANT!
 // The ascending value order of the ActionMap Enum must match
@@ -8,17 +8,33 @@ using UnityEngine;
 // !IMPORTANT!
 [Flags]
 public enum ActionMap {
-    _none =        0,
-    Any =          0x1,
-    OneDimension = 0x2,
-    Test2 =        0x4,
-    Test3 =        0x8,
-    Test4 =        0x10
+    None                        = 0,
+    Any                         = 0x1,
+    OneDimension                = 0x2,
+    VehicleAttitudeDampeners    = 0x4,
+    VehicleAttitudes            = 0x8,
+    VehicleBasic                = 0x10,
+    VehicleDampeners            = 0x20,
+    VehicleExternalConsole      = 0x40,
+    VehicleFreeLook             = 0x80,
+    VehicleInternalConsole      = 0x100,
+    VehicleMotors               = 0x200
 }
 
 public static class ActionMapExtensions {
     public static bool AllowAddition(this ActionMap source, ActionMap possibility) {
-        return source == 0;
+        var target = (source | possibility).Decompose().ToList();
+        if (target.Count == 1)
+            return target[0] == ActionMap.Any |
+                   target[0] == ActionMap.OneDimension |
+                   target[0] == ActionMap.VehicleBasic;
+        else if(target.Contains(ActionMap.VehicleBasic)) {
+            return !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
+                   !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleInternalConsole)) &&
+                   !(target.Contains(ActionMap.VehicleExternalConsole) & target.Contains(ActionMap.VehicleInternalConsole)) &&
+                   !(target.Contains(ActionMap.VehicleFreeLook) & target.Contains(ActionMap.VehicleAttitudes));
+        }
+        return false;
     }
     public static bool Contains(this ActionMap source, ActionMap value) => (source & value) != 0;
     public static IEnumerable<ActionMap> Decompose(this ActionMap source) {

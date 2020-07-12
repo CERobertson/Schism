@@ -64,7 +64,7 @@ public class Game : MonoBehaviour {
     IDictionary<ActionMap, Type> _enumActionMapDictionary;
 
     void GenerateInputActionDictionary() {
-        foreach (var property in typeof(InputActions).GetProperties().Where(x => x.PropertyType.Name.Contains("Action") && x.Name != "asset")) {
+        foreach (var property in typeof(InputActions).GetProperties().Where(x => x.PropertyType.Name.Contains("Action") && x.Name != "asset").OrderBy(x => x.Name)) {
             PropertyInfo propertyInfo;
             if (_inputActionDictionary.TryGetValue(property.PropertyType, out propertyInfo))
                 Debug.LogWarning($"Action Map of type '{propertyInfo.PropertyType}' has already been inserted into the dictionary. Check InputActions definitions.");

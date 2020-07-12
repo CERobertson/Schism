@@ -64,6 +64,5 @@ public abstract class ExclusionaryDisjunction : MonoBehaviour, IOneDimensionActi
     public void OnCancel(InputAction.CallbackContext context) {
         DisableInputActions();
         Cancel();
-        gameObject.SetActive(false);
     }
 }
