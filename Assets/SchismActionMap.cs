@@ -11,14 +11,13 @@ public enum ActionMap {
     None                        = 0,
     Any                         = 0x1,
     OneDimension                = 0x2,
-    VehicleAttitudeDampeners    = 0x4,
-    VehicleAttitudes            = 0x8,
-    VehicleBasic                = 0x10,
-    VehicleDampeners            = 0x20,
-    VehicleExternalConsole      = 0x40,
-    VehicleFreeLook             = 0x80,
-    VehicleInternalConsole      = 0x100,
-    VehicleMotors               = 0x200
+    VehicleAttitudes            = 0x4,
+    VehicleBasic                = 0x8,
+    VehicleDampeners            = 0x10,
+    VehicleExternalConsole      = 0x20,
+    VehicleFreeLook             = 0x40,
+    VehicleInternalConsole      = 0x80,
+    VehicleMotors               = 0x100
 }
 
 public static class ActionMapExtensions {
@@ -29,8 +28,7 @@ public static class ActionMapExtensions {
                    target[0] == ActionMap.OneDimension |
                    target[0] == ActionMap.VehicleBasic;
         else if(target.Contains(ActionMap.VehicleBasic)) {
-            return !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleFreeLook)) &&
-                   !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
+            return !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleInternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleExternalConsole) & target.Contains(ActionMap.VehicleInternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleFreeLook) & target.Contains(ActionMap.VehicleAttitudes));

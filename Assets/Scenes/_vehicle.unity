@@ -150,6 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e39638f985bcd44b3481b72b2e0a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FreeLook: {fileID: 0}
+  ExternalConsole: {fileID: 0}
+  InternalConsole: {fileID: 0}
+  Dampeners: {fileID: 0}
+  Attitudes: {fileID: 0}
+  Motors: {fileID: 0}
+  ActionLock: 4
 --- !u!4 &161892942
 Transform:
   m_ObjectHideFlags: 0

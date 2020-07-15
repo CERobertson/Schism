@@ -6,6 +6,10 @@ using static InputActions;
 
 public class VehicleFreeLook : ImplementsActionMap<VehicleFreeLookActions>, IVehicleFreeLookActions {
     protected override void AwakeCallback() => enabled = false;
+    public void OnAlignWithView(InputAction.CallbackContext context) {
+        throw new System.NotImplementedException();
+    }
+
     public void OnCenter(InputAction.CallbackContext context) {
         throw new System.NotImplementedException();
     }
@@ -15,6 +19,10 @@ public class VehicleFreeLook : ImplementsActionMap<VehicleFreeLookActions>, IVeh
     }
 
     public void OnLookY(InputAction.CallbackContext context) {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnRoll(InputAction.CallbackContext context) {
         throw new System.NotImplementedException();
     }
 }

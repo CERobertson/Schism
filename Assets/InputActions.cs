@@ -891,6 +891,22 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Roll"",
+                    ""type"": ""Value"",
+                    ""id"": ""219c6d8e-a0c4-4624-914d-042f41488485"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""AlignWithView"",
+                    ""type"": ""Button"",
+                    ""id"": ""573e28ad-ff62-4901-b139-2185bda5737c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -957,6 +973,28 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Center"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2513b9d-ce50-402f-93b0-d9d777e76420"",
+                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9040fcf-c485-4824-9172-6f10f3dc16ec"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""AlignWithView"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1239,18 +1277,10 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RollRight"",
-                    ""type"": ""Button"",
+                    ""name"": ""Roll"",
+                    ""type"": ""Value"",
                     ""id"": ""8089c70b-6c33-43b7-98de-108bebb356d3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""RollLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""42e87735-6797-4672-a2b5-e69cd3ecc74a"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -1263,18 +1293,18 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""RollRight"",
+                    ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""c4d16633-ca4f-453e-90a1-b442381266fa"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""path"": ""<Gamepad>/dpad/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad With Keyboard"",
-                    ""action"": ""RollRight"",
+                    ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1302,28 +1332,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9832f17b-0f83-46c0-9845-1db1e3ddf34f"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": ""Invert"",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""RollLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3f5912b2-e6ab-42eb-9e86-700fda5a1dfd"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad With Keyboard"",
-                    ""action"": ""RollLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d04bad16-68dd-4500-8ba2-fd5341ce422e"",
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
@@ -1341,44 +1349,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Pitch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Vehicle Attitude Dampeners"",
-            ""id"": ""3410ef0f-7c6f-47ff-84ba-bdd86918a39d"",
-            ""actions"": [
-                {
-                    ""name"": ""Center"",
-                    ""type"": ""Button"",
-                    ""id"": ""ed8d3c4c-5125-4dda-89f6-25173c06256a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""b2ca5a14-b983-4eb6-9de4-278675ca86f8"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Center"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""61efe83e-3f23-49b0-b631-e344f029fdc9"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad With Keyboard"",
-                    ""action"": ""Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1667,6 +1637,8 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_VehicleFreeLook_Center = m_VehicleFreeLook.FindAction("Center", throwIfNotFound: true);
         m_VehicleFreeLook_LookX = m_VehicleFreeLook.FindAction("LookX", throwIfNotFound: true);
         m_VehicleFreeLook_LookY = m_VehicleFreeLook.FindAction("LookY", throwIfNotFound: true);
+        m_VehicleFreeLook_Roll = m_VehicleFreeLook.FindAction("Roll", throwIfNotFound: true);
+        m_VehicleFreeLook_AlignWithView = m_VehicleFreeLook.FindAction("AlignWithView", throwIfNotFound: true);
         // Vehicle Internal Console
         m_VehicleInternalConsole = asset.FindActionMap("Vehicle Internal Console", throwIfNotFound: true);
         m_VehicleInternalConsole_Console1 = m_VehicleInternalConsole.FindAction("Console 1", throwIfNotFound: true);
@@ -1683,11 +1655,7 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_VehicleAttitudes = asset.FindActionMap("Vehicle Attitudes", throwIfNotFound: true);
         m_VehicleAttitudes_Pitch = m_VehicleAttitudes.FindAction("Pitch", throwIfNotFound: true);
         m_VehicleAttitudes_Yaw = m_VehicleAttitudes.FindAction("Yaw", throwIfNotFound: true);
-        m_VehicleAttitudes_RollRight = m_VehicleAttitudes.FindAction("RollRight", throwIfNotFound: true);
-        m_VehicleAttitudes_RollLeft = m_VehicleAttitudes.FindAction("RollLeft", throwIfNotFound: true);
-        // Vehicle Attitude Dampeners
-        m_VehicleAttitudeDampeners = asset.FindActionMap("Vehicle Attitude Dampeners", throwIfNotFound: true);
-        m_VehicleAttitudeDampeners_Center = m_VehicleAttitudeDampeners.FindAction("Center", throwIfNotFound: true);
+        m_VehicleAttitudes_Roll = m_VehicleAttitudes.FindAction("Roll", throwIfNotFound: true);
         // Vehicle Motors
         m_VehicleMotors = asset.FindActionMap("Vehicle Motors", throwIfNotFound: true);
         m_VehicleMotors_Surge = m_VehicleMotors.FindAction("Surge", throwIfNotFound: true);
@@ -1883,6 +1851,8 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_VehicleFreeLook_Center;
     private readonly InputAction m_VehicleFreeLook_LookX;
     private readonly InputAction m_VehicleFreeLook_LookY;
+    private readonly InputAction m_VehicleFreeLook_Roll;
+    private readonly InputAction m_VehicleFreeLook_AlignWithView;
     public struct VehicleFreeLookActions
     {
         private @InputActions m_Wrapper;
@@ -1890,6 +1860,8 @@ public class @InputActions : IInputActionCollection, IDisposable
         public InputAction @Center => m_Wrapper.m_VehicleFreeLook_Center;
         public InputAction @LookX => m_Wrapper.m_VehicleFreeLook_LookX;
         public InputAction @LookY => m_Wrapper.m_VehicleFreeLook_LookY;
+        public InputAction @Roll => m_Wrapper.m_VehicleFreeLook_Roll;
+        public InputAction @AlignWithView => m_Wrapper.m_VehicleFreeLook_AlignWithView;
         public InputActionMap Get() { return m_Wrapper.m_VehicleFreeLook; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1908,6 +1880,12 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @LookY.started -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookY;
                 @LookY.performed -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookY;
                 @LookY.canceled -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookY;
+                @Roll.started -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnRoll;
+                @Roll.performed -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnRoll;
+                @Roll.canceled -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnRoll;
+                @AlignWithView.started -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnAlignWithView;
+                @AlignWithView.performed -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnAlignWithView;
+                @AlignWithView.canceled -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnAlignWithView;
             }
             m_Wrapper.m_VehicleFreeLookActionsCallbackInterface = instance;
             if (instance != null)
@@ -1921,6 +1899,12 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @LookY.started += instance.OnLookY;
                 @LookY.performed += instance.OnLookY;
                 @LookY.canceled += instance.OnLookY;
+                @Roll.started += instance.OnRoll;
+                @Roll.performed += instance.OnRoll;
+                @Roll.canceled += instance.OnRoll;
+                @AlignWithView.started += instance.OnAlignWithView;
+                @AlignWithView.performed += instance.OnAlignWithView;
+                @AlignWithView.canceled += instance.OnAlignWithView;
             }
         }
     }
@@ -2045,16 +2029,14 @@ public class @InputActions : IInputActionCollection, IDisposable
     private IVehicleAttitudesActions m_VehicleAttitudesActionsCallbackInterface;
     private readonly InputAction m_VehicleAttitudes_Pitch;
     private readonly InputAction m_VehicleAttitudes_Yaw;
-    private readonly InputAction m_VehicleAttitudes_RollRight;
-    private readonly InputAction m_VehicleAttitudes_RollLeft;
+    private readonly InputAction m_VehicleAttitudes_Roll;
     public struct VehicleAttitudesActions
     {
         private @InputActions m_Wrapper;
         public VehicleAttitudesActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pitch => m_Wrapper.m_VehicleAttitudes_Pitch;
         public InputAction @Yaw => m_Wrapper.m_VehicleAttitudes_Yaw;
-        public InputAction @RollRight => m_Wrapper.m_VehicleAttitudes_RollRight;
-        public InputAction @RollLeft => m_Wrapper.m_VehicleAttitudes_RollLeft;
+        public InputAction @Roll => m_Wrapper.m_VehicleAttitudes_Roll;
         public InputActionMap Get() { return m_Wrapper.m_VehicleAttitudes; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2070,12 +2052,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Yaw.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
                 @Yaw.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
                 @Yaw.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
-                @RollRight.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
-                @RollRight.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
-                @RollRight.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
-                @RollLeft.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollLeft;
-                @RollLeft.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollLeft;
-                @RollLeft.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollLeft;
+                @Roll.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRoll;
+                @Roll.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRoll;
+                @Roll.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRoll;
             }
             m_Wrapper.m_VehicleAttitudesActionsCallbackInterface = instance;
             if (instance != null)
@@ -2086,49 +2065,13 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Yaw.started += instance.OnYaw;
                 @Yaw.performed += instance.OnYaw;
                 @Yaw.canceled += instance.OnYaw;
-                @RollRight.started += instance.OnRollRight;
-                @RollRight.performed += instance.OnRollRight;
-                @RollRight.canceled += instance.OnRollRight;
-                @RollLeft.started += instance.OnRollLeft;
-                @RollLeft.performed += instance.OnRollLeft;
-                @RollLeft.canceled += instance.OnRollLeft;
+                @Roll.started += instance.OnRoll;
+                @Roll.performed += instance.OnRoll;
+                @Roll.canceled += instance.OnRoll;
             }
         }
     }
     public VehicleAttitudesActions @VehicleAttitudes => new VehicleAttitudesActions(this);
-
-    // Vehicle Attitude Dampeners
-    private readonly InputActionMap m_VehicleAttitudeDampeners;
-    private IVehicleAttitudeDampenersActions m_VehicleAttitudeDampenersActionsCallbackInterface;
-    private readonly InputAction m_VehicleAttitudeDampeners_Center;
-    public struct VehicleAttitudeDampenersActions
-    {
-        private @InputActions m_Wrapper;
-        public VehicleAttitudeDampenersActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Center => m_Wrapper.m_VehicleAttitudeDampeners_Center;
-        public InputActionMap Get() { return m_Wrapper.m_VehicleAttitudeDampeners; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(VehicleAttitudeDampenersActions set) { return set.Get(); }
-        public void SetCallbacks(IVehicleAttitudeDampenersActions instance)
-        {
-            if (m_Wrapper.m_VehicleAttitudeDampenersActionsCallbackInterface != null)
-            {
-                @Center.started -= m_Wrapper.m_VehicleAttitudeDampenersActionsCallbackInterface.OnCenter;
-                @Center.performed -= m_Wrapper.m_VehicleAttitudeDampenersActionsCallbackInterface.OnCenter;
-                @Center.canceled -= m_Wrapper.m_VehicleAttitudeDampenersActionsCallbackInterface.OnCenter;
-            }
-            m_Wrapper.m_VehicleAttitudeDampenersActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Center.started += instance.OnCenter;
-                @Center.performed += instance.OnCenter;
-                @Center.canceled += instance.OnCenter;
-            }
-        }
-    }
-    public VehicleAttitudeDampenersActions @VehicleAttitudeDampeners => new VehicleAttitudeDampenersActions(this);
 
     // Vehicle Motors
     private readonly InputActionMap m_VehicleMotors;
@@ -2273,6 +2216,8 @@ public class @InputActions : IInputActionCollection, IDisposable
         void OnCenter(InputAction.CallbackContext context);
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
+        void OnRoll(InputAction.CallbackContext context);
+        void OnAlignWithView(InputAction.CallbackContext context);
     }
     public interface IVehicleInternalConsoleActions
     {
@@ -2292,12 +2237,7 @@ public class @InputActions : IInputActionCollection, IDisposable
     {
         void OnPitch(InputAction.CallbackContext context);
         void OnYaw(InputAction.CallbackContext context);
-        void OnRollRight(InputAction.CallbackContext context);
-        void OnRollLeft(InputAction.CallbackContext context);
-    }
-    public interface IVehicleAttitudeDampenersActions
-    {
-        void OnCenter(InputAction.CallbackContext context);
+        void OnRoll(InputAction.CallbackContext context);
     }
     public interface IVehicleMotorsActions
     {

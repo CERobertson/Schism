@@ -878,6 +878,22 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Roll",
+                    "type": "Value",
+                    "id": "219c6d8e-a0c4-4624-914d-042f41488485",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "AlignWithView",
+                    "type": "Button",
+                    "id": "573e28ad-ff62-4901-b139-2185bda5737c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -944,6 +960,28 @@
                     "processors": "",
                     "groups": "Gamepad With Keyboard",
                     "action": "Center",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2513b9d-ce50-402f-93b0-d9d777e76420",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad With Keyboard",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9040fcf-c485-4824-9172-6f10f3dc16ec",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad With Keyboard",
+                    "action": "AlignWithView",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1226,18 +1264,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RollRight",
-                    "type": "Button",
+                    "name": "Roll",
+                    "type": "Value",
                     "id": "8089c70b-6c33-43b7-98de-108bebb356d3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "RollLeft",
-                    "type": "Button",
-                    "id": "42e87735-6797-4672-a2b5-e69cd3ecc74a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 }
@@ -1250,18 +1280,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "RollRight",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "c4d16633-ca4f-453e-90a1-b442381266fa",
-                    "path": "<Gamepad>/dpad/right",
+                    "path": "<Gamepad>/dpad/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad With Keyboard",
-                    "action": "RollRight",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1289,28 +1319,6 @@
                 },
                 {
                     "name": "",
-                    "id": "9832f17b-0f83-46c0-9845-1db1e3ddf34f",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "Invert",
-                    "groups": "Gamepad",
-                    "action": "RollLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3f5912b2-e6ab-42eb-9e86-700fda5a1dfd",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad With Keyboard",
-                    "action": "RollLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d04bad16-68dd-4500-8ba2-fd5341ce422e",
                     "path": "<Gamepad>/rightStick/up",
                     "interactions": "",
@@ -1328,44 +1336,6 @@
                     "processors": "",
                     "groups": "Gamepad With Keyboard",
                     "action": "Pitch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Vehicle Attitude Dampeners",
-            "id": "3410ef0f-7c6f-47ff-84ba-bdd86918a39d",
-            "actions": [
-                {
-                    "name": "Center",
-                    "type": "Button",
-                    "id": "ed8d3c4c-5125-4dda-89f6-25173c06256a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "b2ca5a14-b983-4eb6-9de4-278675ca86f8",
-                    "path": "<Gamepad>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Center",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "61efe83e-3f23-49b0-b631-e344f029fdc9",
-                    "path": "<Gamepad>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad With Keyboard",
-                    "action": "Center",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

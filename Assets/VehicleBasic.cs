@@ -9,7 +9,6 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
     public VehicleFreeLook FreeLook;
     public VehicleExternalConsole ExternalConsole;
     public VehicleInternalConsole InternalConsole;
-    public VehicleAttitudeDampeners AttitudeDampeners;
     public VehicleDampeners Dampeners;
     public VehicleAttitudes Attitudes;
     public VehicleMotors Motors;
@@ -26,10 +25,6 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
         if (InternalConsole == null) {
             InternalConsole = gameObject.AddComponent<VehicleInternalConsole>();
             InternalConsole.OnEnableCallback += (s, e) => { if (!e.HasValue) Debug.LogWarning("Failed to enable Internal Console"); };
-        }
-        if (AttitudeDampeners == null) {
-            AttitudeDampeners = gameObject.AddComponent<VehicleAttitudeDampeners>();
-            AttitudeDampeners.OnEnableCallback += (s, e) => { if (!e.HasValue) Debug.LogWarning("Failed to enable Attitude Dampeners"); };
         }
         if (Dampeners == null) {
             Dampeners = gameObject.AddComponent<VehicleDampeners>();
@@ -48,14 +43,30 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
     IVehicleFreeLookActions FreeLookActions;
     IVehicleExternalConsoleActions ExternalConsoleActions;
     IVehicleInternalConsoleActions InternalConsoleActions;
-    IVehicleAttitudeDampenersActions AttitudeDampenersActions;
     IVehicleDampenersActions DampenersActions;
     IVehicleAttitudesActions AttitudesActions;
     IVehicleMotorsActions MotorActions;
 
+    public ActionMap ActionLock;
+    void SetAction(Action set, ActionMap action) {
+        if (!ActionLock.Contains(action))
+            set();
+    }
+    bool lookModeState;
+    void ToggleLookMode() {
+        lookModeState ^= true;
+        if (lookModeState) {
+            SetAction(() => Attitudes.enabled = false, ActionMap.VehicleAttitudes);
+            SetAction(() => FreeLook.enabled = true, ActionMap.VehicleFreeLook);
+        }
+        else {
+            SetAction(() => FreeLook.enabled = false, ActionMap.VehicleFreeLook);
+            SetAction(() => Attitudes.enabled = true, ActionMap.VehicleAttitudes);
+        }
+    }
 
     public void OnToggleLookMode(InputAction.CallbackContext context) {
-        throw new NotImplementedException();
+            context.FastPress(() => { ToggleLookMode(); });
     }
 
     public void OnToggleConsole(InputAction.CallbackContext context) {
