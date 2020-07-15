@@ -820,18 +820,10 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ToggleInternalConsole"",
-                    ""type"": ""Button"",
-                    ""id"": ""d4141267-a682-442e-b4a7-6ede47eb2e06"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""ToggleExternalConsole"",
-                    ""type"": ""Button"",
-                    ""id"": ""ec06d997-ac0b-4a5a-af2c-d04f1a9bd619"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""ToggleConsole"",
+                    ""type"": ""Value"",
+                    ""id"": ""d90ad8b2-7135-4652-ba0e-cf2f2dafc6d5"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -850,23 +842,23 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6caab59b-7af6-4119-a103-a8926960be15"",
-                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""id"": ""26c7f49a-0159-4e76-8343-805ac5e5d557"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ToggleInternalConsole"",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""ToggleLookMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""627619f9-e1d9-4b8e-a17b-a12efd18b980"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""id"": ""17fbaa8b-bb73-4422-bcd5-2b8b6e2d4745"",
+                    ""path"": ""<Gamepad>/dpad/y"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ToggleExternalConsole"",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -915,6 +907,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6e873b27-ff5e-43bc-82f7-ce68f7c52d26"",
+                    ""path"": ""<Gamepad>/rightStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""LookX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""15dd40aa-52ed-44bd-8c10-c2de542c642d"",
                     ""path"": ""<Gamepad>/rightStick/y"",
                     ""interactions"": """",
@@ -926,11 +929,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""48699d05-80ed-4eb9-bc97-0ea34bfabab2"",
+                    ""path"": ""<Gamepad>/rightStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""LookY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a8d02873-0c4a-4205-816a-57d6831124c5"",
                     ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Center"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dcac461-1b2a-40dc-9b81-f58610e85cc6"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -988,11 +1013,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6ab9e2f3-eeac-4bc6-b0dd-0cc6c8f6d0be"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Console 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""10af15f7-59dc-47f7-8768-3753bfb92254"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Console 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe848ba9-92c1-4e9d-af54-8915259c73b9"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Console 2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1010,11 +1057,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6d883773-0881-4795-840b-7e47b7717d81"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Console 3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""30f51aa2-c400-4a2c-95b0-7d6dc5cd848c"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Console 4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3e94c8e-c099-469e-846e-20529a3d3581"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Console 4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1072,11 +1141,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e18e014e-bed5-4b59-b0e5-51d539bd5c37"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Console 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""41b8b27f-3022-411a-84d3-ba3f7d8f6eec"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Console 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f811f99-e5bc-4477-bd48-465ac8705163"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Console 2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1094,11 +1185,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""1c9655fc-4f87-4e0d-8352-3c827e701de8"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Console 3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""3042061a-1594-43a3-8e89-c40bc0e56811"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Console 4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c7716e5-c911-4a0b-9991-218d7e195c0f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""Console 4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1110,7 +1223,7 @@ public class @InputActions : IInputActionCollection, IDisposable
             ""id"": ""57e82faf-2fa2-4670-8b61-d8da12633114"",
             ""actions"": [
                 {
-                    ""name"": ""PitchUp"",
+                    ""name"": ""Pitch"",
                     ""type"": ""Value"",
                     ""id"": ""1af1ccd1-2521-4fc6-9aca-fca4cbe56285"",
                     ""expectedControlType"": ""Axis"",
@@ -1118,26 +1231,10 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""PitchDown"",
-                    ""type"": ""Button"",
-                    ""id"": ""4354a769-cd3e-4b60-80d1-195ea6cb4223"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""YawRight"",
+                    ""name"": ""Yaw"",
                     ""type"": ""Value"",
                     ""id"": ""e14f7a05-cd50-497d-9ae3-5e0414350547"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""YawLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""1c91a96f-2280-46a9-9fed-9765ec66ae20"",
-                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -1172,12 +1269,34 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c4d16633-ca4f-453e-90a1-b442381266fa"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""RollRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""266ca61f-b926-43a9-8d2c-9bace8df8acd"",
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""YawRight"",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e4978cb-5d3e-4a21-bcbe-1c8cc665ebff"",
+                    ""path"": ""<Gamepad>/rightStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Yaw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1194,12 +1313,12 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""619bfadd-6718-46b0-b82b-2943aa3e86ed"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""id"": ""3f5912b2-e6ab-42eb-9e86-700fda5a1dfd"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""YawLeft"",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""RollLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1210,18 +1329,18 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""PitchUp"",
+                    ""action"": ""Pitch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ed6f89fb-afab-4331-b98e-ca3cf092846d"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""id"": ""2402521a-4257-45b9-87fb-585a1f8e680c"",
+                    ""path"": ""<Gamepad>/rightStick/y"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""PitchDown"",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Pitch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1251,6 +1370,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61efe83e-3f23-49b0-b631-e344f029fdc9"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Center"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1259,18 +1389,18 @@ public class @InputActions : IInputActionCollection, IDisposable
             ""id"": ""0c152086-559b-4cf1-aed4-afc8d4d5b6ec"",
             ""actions"": [
                 {
-                    ""name"": ""SwayRight"",
+                    ""name"": ""Surge"",
                     ""type"": ""Value"",
-                    ""id"": ""287f5a1f-14d1-4481-b39d-4a892c72ed68"",
+                    ""id"": ""8642af82-52ef-4fba-ab8b-bfe0a877adab"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SwayLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""64d09b1a-b728-4848-8d6b-6192dada8202"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Sway"",
+                    ""type"": ""Value"",
+                    ""id"": ""287f5a1f-14d1-4481-b39d-4a892c72ed68"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -1289,22 +1419,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""SurgeUp"",
-                    ""type"": ""Value"",
-                    ""id"": ""8642af82-52ef-4fba-ab8b-bfe0a877adab"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""SurgeDown"",
-                    ""type"": ""Button"",
-                    ""id"": ""895d8c04-3acf-4b6b-8265-1ee57d6252b0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -1315,40 +1429,18 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""SwayRight"",
+                    ""action"": ""Sway"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""513a730d-e08a-4fb6-9995-3753ee116b53"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""id"": ""760ffa42-b8b2-47be-b253-0873798c4af6"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""SurgeUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eff8ab9b-b1bc-42f2-b3e9-72f24b84a9fe"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""SurgeDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cfc9b09e-687a-4db8-814f-8bd8bbbdb03a"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""SwayLeft"",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Sway"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1365,12 +1457,45 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""84ea7963-00de-418e-84bc-f08b82176712"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""HeaveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""75ce9674-496b-4739-ba4d-aa66f603f4ef"",
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": ""Invert"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""HeaveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""900632f1-14d4-43ba-a2a9-45da9a91ee51"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""HeaveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a59beab-a721-4cdb-b311-624beb4a14e2"",
+                    ""path"": ""<Gamepad>/leftStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""Surge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1427,11 +1552,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""04d1ce33-c6b8-457b-b37b-258498e91313"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""DampenSurge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""87ad3692-8c3e-4f6f-9305-0668ee2c1ed0"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""DampenSway"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91f47241-1c9e-4ef5-8c4d-aa17d65b07f6"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""DampenSway"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1449,11 +1596,33 @@ public class @InputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a6bb7b8b-2d35-4ab1-8a8a-8886c0f95ff1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
+                    ""action"": ""DampenHeave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d4cbe652-15a9-43e7-bf34-bebb6a1db46b"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""DampenAllMotors"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f3b7a76-c4e0-4938-9d41-4554a43fc097"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""DampenAllMotors"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1492,8 +1661,7 @@ public class @InputActions : IInputActionCollection, IDisposable
         // Vehicle Basic
         m_VehicleBasic = asset.FindActionMap("Vehicle Basic", throwIfNotFound: true);
         m_VehicleBasic_ToggleLookMode = m_VehicleBasic.FindAction("ToggleLookMode", throwIfNotFound: true);
-        m_VehicleBasic_ToggleInternalConsole = m_VehicleBasic.FindAction("ToggleInternalConsole", throwIfNotFound: true);
-        m_VehicleBasic_ToggleExternalConsole = m_VehicleBasic.FindAction("ToggleExternalConsole", throwIfNotFound: true);
+        m_VehicleBasic_ToggleConsole = m_VehicleBasic.FindAction("ToggleConsole", throwIfNotFound: true);
         // Vehicle Free Look
         m_VehicleFreeLook = asset.FindActionMap("Vehicle Free Look", throwIfNotFound: true);
         m_VehicleFreeLook_Center = m_VehicleFreeLook.FindAction("Center", throwIfNotFound: true);
@@ -1513,10 +1681,8 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_VehicleExternalConsole_Console4 = m_VehicleExternalConsole.FindAction("Console 4", throwIfNotFound: true);
         // Vehicle Attitudes
         m_VehicleAttitudes = asset.FindActionMap("Vehicle Attitudes", throwIfNotFound: true);
-        m_VehicleAttitudes_PitchUp = m_VehicleAttitudes.FindAction("PitchUp", throwIfNotFound: true);
-        m_VehicleAttitudes_PitchDown = m_VehicleAttitudes.FindAction("PitchDown", throwIfNotFound: true);
-        m_VehicleAttitudes_YawRight = m_VehicleAttitudes.FindAction("YawRight", throwIfNotFound: true);
-        m_VehicleAttitudes_YawLeft = m_VehicleAttitudes.FindAction("YawLeft", throwIfNotFound: true);
+        m_VehicleAttitudes_Pitch = m_VehicleAttitudes.FindAction("Pitch", throwIfNotFound: true);
+        m_VehicleAttitudes_Yaw = m_VehicleAttitudes.FindAction("Yaw", throwIfNotFound: true);
         m_VehicleAttitudes_RollRight = m_VehicleAttitudes.FindAction("RollRight", throwIfNotFound: true);
         m_VehicleAttitudes_RollLeft = m_VehicleAttitudes.FindAction("RollLeft", throwIfNotFound: true);
         // Vehicle Attitude Dampeners
@@ -1524,12 +1690,10 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_VehicleAttitudeDampeners_Center = m_VehicleAttitudeDampeners.FindAction("Center", throwIfNotFound: true);
         // Vehicle Motors
         m_VehicleMotors = asset.FindActionMap("Vehicle Motors", throwIfNotFound: true);
-        m_VehicleMotors_SwayRight = m_VehicleMotors.FindAction("SwayRight", throwIfNotFound: true);
-        m_VehicleMotors_SwayLeft = m_VehicleMotors.FindAction("SwayLeft", throwIfNotFound: true);
+        m_VehicleMotors_Surge = m_VehicleMotors.FindAction("Surge", throwIfNotFound: true);
+        m_VehicleMotors_Sway = m_VehicleMotors.FindAction("Sway", throwIfNotFound: true);
         m_VehicleMotors_HeaveUp = m_VehicleMotors.FindAction("HeaveUp", throwIfNotFound: true);
         m_VehicleMotors_HeaveDown = m_VehicleMotors.FindAction("HeaveDown", throwIfNotFound: true);
-        m_VehicleMotors_SurgeUp = m_VehicleMotors.FindAction("SurgeUp", throwIfNotFound: true);
-        m_VehicleMotors_SurgeDown = m_VehicleMotors.FindAction("SurgeDown", throwIfNotFound: true);
         // Vehicle Dampeners
         m_VehicleDampeners = asset.FindActionMap("Vehicle Dampeners", throwIfNotFound: true);
         m_VehicleDampeners_DampenSurge = m_VehicleDampeners.FindAction("DampenSurge", throwIfNotFound: true);
@@ -1676,15 +1840,13 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_VehicleBasic;
     private IVehicleBasicActions m_VehicleBasicActionsCallbackInterface;
     private readonly InputAction m_VehicleBasic_ToggleLookMode;
-    private readonly InputAction m_VehicleBasic_ToggleInternalConsole;
-    private readonly InputAction m_VehicleBasic_ToggleExternalConsole;
+    private readonly InputAction m_VehicleBasic_ToggleConsole;
     public struct VehicleBasicActions
     {
         private @InputActions m_Wrapper;
         public VehicleBasicActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @ToggleLookMode => m_Wrapper.m_VehicleBasic_ToggleLookMode;
-        public InputAction @ToggleInternalConsole => m_Wrapper.m_VehicleBasic_ToggleInternalConsole;
-        public InputAction @ToggleExternalConsole => m_Wrapper.m_VehicleBasic_ToggleExternalConsole;
+        public InputAction @ToggleConsole => m_Wrapper.m_VehicleBasic_ToggleConsole;
         public InputActionMap Get() { return m_Wrapper.m_VehicleBasic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1697,12 +1859,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @ToggleLookMode.started -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleLookMode;
                 @ToggleLookMode.performed -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleLookMode;
                 @ToggleLookMode.canceled -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleLookMode;
-                @ToggleInternalConsole.started -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleInternalConsole;
-                @ToggleInternalConsole.performed -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleInternalConsole;
-                @ToggleInternalConsole.canceled -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleInternalConsole;
-                @ToggleExternalConsole.started -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleExternalConsole;
-                @ToggleExternalConsole.performed -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleExternalConsole;
-                @ToggleExternalConsole.canceled -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleExternalConsole;
+                @ToggleConsole.started -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_VehicleBasicActionsCallbackInterface.OnToggleConsole;
             }
             m_Wrapper.m_VehicleBasicActionsCallbackInterface = instance;
             if (instance != null)
@@ -1710,12 +1869,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @ToggleLookMode.started += instance.OnToggleLookMode;
                 @ToggleLookMode.performed += instance.OnToggleLookMode;
                 @ToggleLookMode.canceled += instance.OnToggleLookMode;
-                @ToggleInternalConsole.started += instance.OnToggleInternalConsole;
-                @ToggleInternalConsole.performed += instance.OnToggleInternalConsole;
-                @ToggleInternalConsole.canceled += instance.OnToggleInternalConsole;
-                @ToggleExternalConsole.started += instance.OnToggleExternalConsole;
-                @ToggleExternalConsole.performed += instance.OnToggleExternalConsole;
-                @ToggleExternalConsole.canceled += instance.OnToggleExternalConsole;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
             }
         }
     }
@@ -1887,20 +2043,16 @@ public class @InputActions : IInputActionCollection, IDisposable
     // Vehicle Attitudes
     private readonly InputActionMap m_VehicleAttitudes;
     private IVehicleAttitudesActions m_VehicleAttitudesActionsCallbackInterface;
-    private readonly InputAction m_VehicleAttitudes_PitchUp;
-    private readonly InputAction m_VehicleAttitudes_PitchDown;
-    private readonly InputAction m_VehicleAttitudes_YawRight;
-    private readonly InputAction m_VehicleAttitudes_YawLeft;
+    private readonly InputAction m_VehicleAttitudes_Pitch;
+    private readonly InputAction m_VehicleAttitudes_Yaw;
     private readonly InputAction m_VehicleAttitudes_RollRight;
     private readonly InputAction m_VehicleAttitudes_RollLeft;
     public struct VehicleAttitudesActions
     {
         private @InputActions m_Wrapper;
         public VehicleAttitudesActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PitchUp => m_Wrapper.m_VehicleAttitudes_PitchUp;
-        public InputAction @PitchDown => m_Wrapper.m_VehicleAttitudes_PitchDown;
-        public InputAction @YawRight => m_Wrapper.m_VehicleAttitudes_YawRight;
-        public InputAction @YawLeft => m_Wrapper.m_VehicleAttitudes_YawLeft;
+        public InputAction @Pitch => m_Wrapper.m_VehicleAttitudes_Pitch;
+        public InputAction @Yaw => m_Wrapper.m_VehicleAttitudes_Yaw;
         public InputAction @RollRight => m_Wrapper.m_VehicleAttitudes_RollRight;
         public InputAction @RollLeft => m_Wrapper.m_VehicleAttitudes_RollLeft;
         public InputActionMap Get() { return m_Wrapper.m_VehicleAttitudes; }
@@ -1912,18 +2064,12 @@ public class @InputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_VehicleAttitudesActionsCallbackInterface != null)
             {
-                @PitchUp.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchUp;
-                @PitchUp.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchUp;
-                @PitchUp.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchUp;
-                @PitchDown.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchDown;
-                @PitchDown.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchDown;
-                @PitchDown.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitchDown;
-                @YawRight.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawRight;
-                @YawRight.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawRight;
-                @YawRight.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawRight;
-                @YawLeft.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawLeft;
-                @YawLeft.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawLeft;
-                @YawLeft.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYawLeft;
+                @Pitch.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitch;
+                @Pitch.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitch;
+                @Pitch.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnPitch;
+                @Yaw.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
+                @Yaw.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
+                @Yaw.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnYaw;
                 @RollRight.started -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
                 @RollRight.performed -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
                 @RollRight.canceled -= m_Wrapper.m_VehicleAttitudesActionsCallbackInterface.OnRollRight;
@@ -1934,18 +2080,12 @@ public class @InputActions : IInputActionCollection, IDisposable
             m_Wrapper.m_VehicleAttitudesActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @PitchUp.started += instance.OnPitchUp;
-                @PitchUp.performed += instance.OnPitchUp;
-                @PitchUp.canceled += instance.OnPitchUp;
-                @PitchDown.started += instance.OnPitchDown;
-                @PitchDown.performed += instance.OnPitchDown;
-                @PitchDown.canceled += instance.OnPitchDown;
-                @YawRight.started += instance.OnYawRight;
-                @YawRight.performed += instance.OnYawRight;
-                @YawRight.canceled += instance.OnYawRight;
-                @YawLeft.started += instance.OnYawLeft;
-                @YawLeft.performed += instance.OnYawLeft;
-                @YawLeft.canceled += instance.OnYawLeft;
+                @Pitch.started += instance.OnPitch;
+                @Pitch.performed += instance.OnPitch;
+                @Pitch.canceled += instance.OnPitch;
+                @Yaw.started += instance.OnYaw;
+                @Yaw.performed += instance.OnYaw;
+                @Yaw.canceled += instance.OnYaw;
                 @RollRight.started += instance.OnRollRight;
                 @RollRight.performed += instance.OnRollRight;
                 @RollRight.canceled += instance.OnRollRight;
@@ -1993,22 +2133,18 @@ public class @InputActions : IInputActionCollection, IDisposable
     // Vehicle Motors
     private readonly InputActionMap m_VehicleMotors;
     private IVehicleMotorsActions m_VehicleMotorsActionsCallbackInterface;
-    private readonly InputAction m_VehicleMotors_SwayRight;
-    private readonly InputAction m_VehicleMotors_SwayLeft;
+    private readonly InputAction m_VehicleMotors_Surge;
+    private readonly InputAction m_VehicleMotors_Sway;
     private readonly InputAction m_VehicleMotors_HeaveUp;
     private readonly InputAction m_VehicleMotors_HeaveDown;
-    private readonly InputAction m_VehicleMotors_SurgeUp;
-    private readonly InputAction m_VehicleMotors_SurgeDown;
     public struct VehicleMotorsActions
     {
         private @InputActions m_Wrapper;
         public VehicleMotorsActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SwayRight => m_Wrapper.m_VehicleMotors_SwayRight;
-        public InputAction @SwayLeft => m_Wrapper.m_VehicleMotors_SwayLeft;
+        public InputAction @Surge => m_Wrapper.m_VehicleMotors_Surge;
+        public InputAction @Sway => m_Wrapper.m_VehicleMotors_Sway;
         public InputAction @HeaveUp => m_Wrapper.m_VehicleMotors_HeaveUp;
         public InputAction @HeaveDown => m_Wrapper.m_VehicleMotors_HeaveDown;
-        public InputAction @SurgeUp => m_Wrapper.m_VehicleMotors_SurgeUp;
-        public InputAction @SurgeDown => m_Wrapper.m_VehicleMotors_SurgeDown;
         public InputActionMap Get() { return m_Wrapper.m_VehicleMotors; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2018,46 +2154,34 @@ public class @InputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_VehicleMotorsActionsCallbackInterface != null)
             {
-                @SwayRight.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayRight;
-                @SwayRight.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayRight;
-                @SwayRight.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayRight;
-                @SwayLeft.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayLeft;
-                @SwayLeft.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayLeft;
-                @SwayLeft.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSwayLeft;
+                @Surge.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurge;
+                @Surge.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurge;
+                @Surge.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurge;
+                @Sway.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSway;
+                @Sway.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSway;
+                @Sway.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSway;
                 @HeaveUp.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveUp;
                 @HeaveUp.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveUp;
                 @HeaveUp.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveUp;
                 @HeaveDown.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveDown;
                 @HeaveDown.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveDown;
                 @HeaveDown.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnHeaveDown;
-                @SurgeUp.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeUp;
-                @SurgeUp.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeUp;
-                @SurgeUp.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeUp;
-                @SurgeDown.started -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeDown;
-                @SurgeDown.performed -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeDown;
-                @SurgeDown.canceled -= m_Wrapper.m_VehicleMotorsActionsCallbackInterface.OnSurgeDown;
             }
             m_Wrapper.m_VehicleMotorsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @SwayRight.started += instance.OnSwayRight;
-                @SwayRight.performed += instance.OnSwayRight;
-                @SwayRight.canceled += instance.OnSwayRight;
-                @SwayLeft.started += instance.OnSwayLeft;
-                @SwayLeft.performed += instance.OnSwayLeft;
-                @SwayLeft.canceled += instance.OnSwayLeft;
+                @Surge.started += instance.OnSurge;
+                @Surge.performed += instance.OnSurge;
+                @Surge.canceled += instance.OnSurge;
+                @Sway.started += instance.OnSway;
+                @Sway.performed += instance.OnSway;
+                @Sway.canceled += instance.OnSway;
                 @HeaveUp.started += instance.OnHeaveUp;
                 @HeaveUp.performed += instance.OnHeaveUp;
                 @HeaveUp.canceled += instance.OnHeaveUp;
                 @HeaveDown.started += instance.OnHeaveDown;
                 @HeaveDown.performed += instance.OnHeaveDown;
                 @HeaveDown.canceled += instance.OnHeaveDown;
-                @SurgeUp.started += instance.OnSurgeUp;
-                @SurgeUp.performed += instance.OnSurgeUp;
-                @SurgeUp.canceled += instance.OnSurgeUp;
-                @SurgeDown.started += instance.OnSurgeDown;
-                @SurgeDown.performed += instance.OnSurgeDown;
-                @SurgeDown.canceled += instance.OnSurgeDown;
             }
         }
     }
@@ -2142,8 +2266,7 @@ public class @InputActions : IInputActionCollection, IDisposable
     public interface IVehicleBasicActions
     {
         void OnToggleLookMode(InputAction.CallbackContext context);
-        void OnToggleInternalConsole(InputAction.CallbackContext context);
-        void OnToggleExternalConsole(InputAction.CallbackContext context);
+        void OnToggleConsole(InputAction.CallbackContext context);
     }
     public interface IVehicleFreeLookActions
     {
@@ -2167,10 +2290,8 @@ public class @InputActions : IInputActionCollection, IDisposable
     }
     public interface IVehicleAttitudesActions
     {
-        void OnPitchUp(InputAction.CallbackContext context);
-        void OnPitchDown(InputAction.CallbackContext context);
-        void OnYawRight(InputAction.CallbackContext context);
-        void OnYawLeft(InputAction.CallbackContext context);
+        void OnPitch(InputAction.CallbackContext context);
+        void OnYaw(InputAction.CallbackContext context);
         void OnRollRight(InputAction.CallbackContext context);
         void OnRollLeft(InputAction.CallbackContext context);
     }
@@ -2180,12 +2301,10 @@ public class @InputActions : IInputActionCollection, IDisposable
     }
     public interface IVehicleMotorsActions
     {
-        void OnSwayRight(InputAction.CallbackContext context);
-        void OnSwayLeft(InputAction.CallbackContext context);
+        void OnSurge(InputAction.CallbackContext context);
+        void OnSway(InputAction.CallbackContext context);
         void OnHeaveUp(InputAction.CallbackContext context);
         void OnHeaveDown(InputAction.CallbackContext context);
-        void OnSurgeUp(InputAction.CallbackContext context);
-        void OnSurgeDown(InputAction.CallbackContext context);
     }
     public interface IVehicleDampenersActions
     {

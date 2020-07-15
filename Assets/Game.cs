@@ -95,8 +95,10 @@ public class Game : MonoBehaviour {
                 lock (_InputState_) {
                     if (InputState.AllowAddition(actionMap))
                         InputState |= actionMap;
-                    else
+                    else {
+                        Debug.LogWarning($"Attempting to activate Action Map '{actionMap}' while current state is '{InputState}'");
                         result = null;
+                    }
                 }
             }
             else

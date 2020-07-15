@@ -29,8 +29,9 @@ public static class ActionMapExtensions {
                    target[0] == ActionMap.OneDimension |
                    target[0] == ActionMap.VehicleBasic;
         else if(target.Contains(ActionMap.VehicleBasic)) {
-            return !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
-                   !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleInternalConsole)) &&
+            return !(target.Contains(ActionMap.VehicleAttitudeDampeners) & target.Contains(ActionMap.VehicleFreeLook)) &&
+                   !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
+                   !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleInternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleExternalConsole) & target.Contains(ActionMap.VehicleInternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleFreeLook) & target.Contains(ActionMap.VehicleAttitudes));
         }
