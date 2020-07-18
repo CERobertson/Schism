@@ -12,10 +12,19 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
     public VehicleDampeners Dampeners;
     public VehicleAttitudes Attitudes;
     public VehicleMotors Motors;
+    public Camera Camera;
+    public Quaternion Center;
 
     protected override void AwakeCallback() {
+        if (Camera == null) {
+            var vehicleCamera = new GameObject("Vehicle Camera", new Type[] { typeof(Camera) });
+            vehicleCamera.transform.parent = gameObject.transform.parent;
+            Camera = vehicleCamera.AddComponent<Camera>();
+        }
         if (FreeLook == null) {
             FreeLook = gameObject.AddComponent<VehicleFreeLook>();
+            FreeLook.Camera = Camera;
+            FreeLook.CenterOfVehicle = this;
             FreeLook.OnEnableCallback += (s, e) => { if (!e.HasValue) Debug.LogWarning("Failed to enable Free Look"); };
         }
         if (ExternalConsole == null) {
@@ -32,12 +41,15 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
         }
         if (Attitudes == null) {
             Attitudes = gameObject.AddComponent<VehicleAttitudes>();
+            Attitudes.CenterOfVehicle = Camera.gameObject;
             Attitudes.OnEnableCallback += (s, e) => { if (!e.HasValue) Debug.LogWarning("Failed to enable Attitudes"); };
         }
         if (Motors == null) {
             Motors = gameObject.AddComponent<VehicleMotors>();
+            Attitudes.CenterOfVehicle = Camera.gameObject;
             Motors.OnEnableCallback += (s, e) => { if (!e.HasValue) Debug.LogWarning("Failed to enable Motors"); };
         }
+        Center = gameObject.transform.rotation;
     }
 
     IVehicleFreeLookActions FreeLookActions;
@@ -62,15 +74,24 @@ public class VehicleBasic : ImplementsActionMap<VehicleBasicActions>, IVehicleBa
         else {
             SetAction(() => FreeLook.enabled = false, ActionMap.VehicleFreeLook);
             SetAction(() => Attitudes.enabled = true, ActionMap.VehicleAttitudes);
+            StartCoroutine(CenterCamera());
+        }
+    }
+    IEnumerator CenterCamera() {
+        var progress = 0.0f;
+        while (progress < 1) {
+            Camera.transform.rotation = Quaternion.Slerp(Camera.transform.rotation, Center, progress);
+            yield return new WaitForFixedUpdate();
+            progress += Time.deltaTime;
         }
     }
 
     public void OnToggleLookMode(InputAction.CallbackContext context) {
-            context.FastPress(() => { ToggleLookMode(); });
+        context.FastPress(() => { ToggleLookMode(); });
     }
 
     public void OnToggleConsole(InputAction.CallbackContext context) {
-        context.FastPress(() => ExternalConsole.enabled = true, () => InternalConsole.enabled = true);
+        context.FastPress(_ => ExternalConsole.enabled = true, _ => InternalConsole.enabled = true);
         context.SlowRelease(() => { ExternalConsole.enabled = false; InternalConsole.enabled = false; });
     }
 }

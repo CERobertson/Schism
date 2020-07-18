@@ -10,14 +10,15 @@ using System.Linq;
 public enum ActionMap {
     None                        = 0,
     Any                         = 0x1,
-    OneDimension                = 0x2,
-    VehicleAttitudes            = 0x4,
-    VehicleBasic                = 0x8,
-    VehicleDampeners            = 0x10,
-    VehicleExternalConsole      = 0x20,
-    VehicleFreeLook             = 0x40,
-    VehicleInternalConsole      = 0x80,
-    VehicleMotors               = 0x100
+    Individual                  = 0x2,
+    OneDimension                = 0x4,
+    VehicleAttitudes            = 0x8,
+    VehicleBasic                = 0x10,
+    VehicleDampeners            = 0x20,
+    VehicleExternalConsole      = 0x40,
+    VehicleFreeLook             = 0x80,
+    VehicleInternalConsole      = 0x100,
+    VehicleMotors               = 0x200
 }
 
 public static class ActionMapExtensions {
@@ -26,7 +27,8 @@ public static class ActionMapExtensions {
         if (target.Count == 1)
             return target[0] == ActionMap.Any |
                    target[0] == ActionMap.OneDimension |
-                   target[0] == ActionMap.VehicleBasic;
+                   target[0] == ActionMap.VehicleBasic |
+                   target[0] == ActionMap.Individual;
         else if(target.Contains(ActionMap.VehicleBasic)) {
             return !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleExternalConsole)) &&
                    !(target.Contains(ActionMap.VehicleDampeners) & target.Contains(ActionMap.VehicleInternalConsole)) &&

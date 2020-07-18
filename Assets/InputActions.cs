@@ -869,14 +869,6 @@ public class @InputActions : IInputActionCollection, IDisposable
             ""id"": ""b43a0ff9-a868-49d7-9901-87e6883a4f8e"",
             ""actions"": [
                 {
-                    ""name"": ""Center"",
-                    ""type"": ""Button"",
-                    ""id"": ""4bae2e41-859d-4f2d-8f42-4edf26c96e80"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""LookX"",
                     ""type"": ""Value"",
                     ""id"": ""f2a0f094-afc5-44ac-8d96-3db18b301df3"",
@@ -951,28 +943,6 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad With Keyboard"",
                     ""action"": ""LookY"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a8d02873-0c4a-4205-816a-57d6831124c5"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Center"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4dcac461-1b2a-40dc-9b81-f58610e85cc6"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad With Keyboard"",
-                    ""action"": ""Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1634,7 +1604,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_VehicleBasic_ToggleConsole = m_VehicleBasic.FindAction("ToggleConsole", throwIfNotFound: true);
         // Vehicle Free Look
         m_VehicleFreeLook = asset.FindActionMap("Vehicle Free Look", throwIfNotFound: true);
-        m_VehicleFreeLook_Center = m_VehicleFreeLook.FindAction("Center", throwIfNotFound: true);
         m_VehicleFreeLook_LookX = m_VehicleFreeLook.FindAction("LookX", throwIfNotFound: true);
         m_VehicleFreeLook_LookY = m_VehicleFreeLook.FindAction("LookY", throwIfNotFound: true);
         m_VehicleFreeLook_Roll = m_VehicleFreeLook.FindAction("Roll", throwIfNotFound: true);
@@ -1848,7 +1817,6 @@ public class @InputActions : IInputActionCollection, IDisposable
     // Vehicle Free Look
     private readonly InputActionMap m_VehicleFreeLook;
     private IVehicleFreeLookActions m_VehicleFreeLookActionsCallbackInterface;
-    private readonly InputAction m_VehicleFreeLook_Center;
     private readonly InputAction m_VehicleFreeLook_LookX;
     private readonly InputAction m_VehicleFreeLook_LookY;
     private readonly InputAction m_VehicleFreeLook_Roll;
@@ -1857,7 +1825,6 @@ public class @InputActions : IInputActionCollection, IDisposable
     {
         private @InputActions m_Wrapper;
         public VehicleFreeLookActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Center => m_Wrapper.m_VehicleFreeLook_Center;
         public InputAction @LookX => m_Wrapper.m_VehicleFreeLook_LookX;
         public InputAction @LookY => m_Wrapper.m_VehicleFreeLook_LookY;
         public InputAction @Roll => m_Wrapper.m_VehicleFreeLook_Roll;
@@ -1871,9 +1838,6 @@ public class @InputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_VehicleFreeLookActionsCallbackInterface != null)
             {
-                @Center.started -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnCenter;
-                @Center.performed -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnCenter;
-                @Center.canceled -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnCenter;
                 @LookX.started -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookX;
                 @LookX.performed -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookX;
                 @LookX.canceled -= m_Wrapper.m_VehicleFreeLookActionsCallbackInterface.OnLookX;
@@ -1890,9 +1854,6 @@ public class @InputActions : IInputActionCollection, IDisposable
             m_Wrapper.m_VehicleFreeLookActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Center.started += instance.OnCenter;
-                @Center.performed += instance.OnCenter;
-                @Center.canceled += instance.OnCenter;
                 @LookX.started += instance.OnLookX;
                 @LookX.performed += instance.OnLookX;
                 @LookX.canceled += instance.OnLookX;
@@ -2213,7 +2174,6 @@ public class @InputActions : IInputActionCollection, IDisposable
     }
     public interface IVehicleFreeLookActions
     {
-        void OnCenter(InputAction.CallbackContext context);
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);

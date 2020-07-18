@@ -856,14 +856,6 @@
             "id": "b43a0ff9-a868-49d7-9901-87e6883a4f8e",
             "actions": [
                 {
-                    "name": "Center",
-                    "type": "Button",
-                    "id": "4bae2e41-859d-4f2d-8f42-4edf26c96e80",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "LookX",
                     "type": "Value",
                     "id": "f2a0f094-afc5-44ac-8d96-3db18b301df3",
@@ -938,28 +930,6 @@
                     "processors": "",
                     "groups": "Gamepad With Keyboard",
                     "action": "LookY",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a8d02873-0c4a-4205-816a-57d6831124c5",
-                    "path": "<Gamepad>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Center",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4dcac461-1b2a-40dc-9b81-f58610e85cc6",
-                    "path": "<Gamepad>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad With Keyboard",
-                    "action": "Center",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
